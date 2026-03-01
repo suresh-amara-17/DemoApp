@@ -1,4 +1,4 @@
-name: Update Code On Server
+name: Push to EC2
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Pull Latest Code
+      - name: SSH and Pull Code
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SERVER_HOST }}
